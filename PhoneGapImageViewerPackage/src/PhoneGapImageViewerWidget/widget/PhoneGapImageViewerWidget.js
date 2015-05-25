@@ -371,7 +371,8 @@ require({
 	},
 
 	zoomfunct:function($, $img, s){
-		var magnifyicons=this.magnifyicons
+		var magnifyicons=this.magnifyicons,
+            self = this;
 		var $zoomimages = $(magnifyicons.join(''))
 			.css({zIndex:1000, cursor:'pointer', opacity:0.7})
 			.attr("title", "Zoom Out")
@@ -382,14 +383,14 @@ require({
 			var $zimg=$(this) //reference image clicked on
 			var curzoom=s.curzoom //get current zoom level
 			var zoomtype=($zimg.attr("title").indexOf("In")!=-1)? "in" : "out"
-			if (zoomtype=="in" && s.curzoom==this.maxzoom || zoomtype=="out" && s.curzoom==1) //exit if user at either ends of magnify levels
+			if (zoomtype=="in" && s.curzoom==self.maxzoom || zoomtype=="out" && s.curzoom==1) //exit if user at either ends of magnify levels
 				return
 			var basepos=[s.pos[0]/curzoom, s.pos[1]/curzoom]
-			var newzoom=(zoomtype=="out")? Math.max(1, curzoom-1) : Math.min(this.maxzoom, curzoom+1) //get new zoom level
+			var newzoom=(zoomtype=="out")? Math.max(1, curzoom-1) : Math.min(self.maxzoom, curzoom+1) //get new zoom level
 			$zoomimages.css("opacity", 1)
 			if (newzoom==1) //if zoom level is 1x, dim "zoom out" image
 				$zoomimages.eq(1).css("opacity", 0.7)
-			else if (newzoom==this.maxzoom) //if zoom level is max level, dim "zoom in" image
+			else if (newzoom==self.maxzoom) //if zoom level is max level, dim "zoom in" image
 				$zoomimages.eq(0).css("opacity", 0.7)
 			clearTimeout(s.statustimer)
 			s.$statusdiv.html(newzoom+"x Magnify").show() //show current zoom status/level
@@ -408,7 +409,7 @@ require({
     
     attachToDiv : function () {
 		var $this=$(this._previewNode).css({position:'relative', overflow:'hidden', cursor:'move'})
-		var options={$pancontainer:$this, pos:$this.attr('data-orient'), curzoom:4, canzoom:$this.attr('data-canzoom'), wrappersize:[$this.width(), $this.height()]}
+		var options={$pancontainer:$this, pos:$this.attr('data-orient'), curzoom:1, canzoom:$this.attr('data-canzoom'), wrappersize:[$this.width(), $this.height()]}
         var $imgref=$(this._imgNode)
         if (parseInt(this._imgNode.style.width)>0 && parseInt(this._imgNode.style.height)>0) //if image has explicit CSS width/height defined
             this.init($, $imgref, options)
