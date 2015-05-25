@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<widget id="PhoneGapImageViewerWidget.widget.PhoneGapImageViewerWidget" needsEntityContext="false" xmlns="http://www.mendix.com/widget/1.0/">
+  <name>PhoneGapImageViewerWidget</name>
+  <description>View image on the device.</description>
+
+  <icon>
+iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAQAAADZc7J/AAAAAmJLR0QA/4ePzL8AAAAJcEhZcwAAAEgAAABIAEbJaz4AAAAJdnBBZwAAACAAAAAgAIf6nJ0AAADCSURBVEjH7ZUhEsMgEEU/DCJiRWQOEBFRgegBen9VUVGRQ1REIDKTCkpTIAS2iJisgRl4D3aZHcSCupCV/CkAoOwgCBc0DM7gsUy/N+hZONCg91No2XdvvRQ+cS9CyZ0eC15Bdea8LfUKCho60DMEChoEKlHIJG6zzSrkDl6kkLv4qlC4YtjOFsF2ivYQ9HflmRNsh5N2sYLbTF2+iMw4XhAWcSpsqKRg9hqKLbj9XwPmuSvhBCMMCzcY7UScX1u94A19CBhNpQHe9AAAACV0RVh0ZGF0ZTpjcmVhdGUAMjAxMC0wMi0xMVQxMTo1MDowOC0wNjowMNYQZfsAAAAldEVYdGRhdGU6bW9kaWZ5ADIwMDYtMDUtMDVUMTM6MjI6NDAtMDU6MDC/5P4aAAAAAElFTkSuQmCC
+</icon>
+    
+  <phonegap enabled="true"/>
+    
+  <properties>
+        <property key="buttonClass" type="string" defaultValue="wx-mxwx-button-extra">
+            <caption>Class</caption>
+            <category>Button</category>
+            <description>The class on the button.</description>
+        </property>
+        <property key="buttonText" type="translatableString">
+            <caption>Label</caption>
+            <category>Button</category>
+            <description>The label on the button.</description>
+            <translations>
+                <translation lang="en_GB">Select image</translation>
+                <translation lang="en_US">Select image</translation>
+                <translation lang="nl_NL">Foto kiezen</translation>
+            </translations>            
+        </property>
+        <property key="imageContainerClass" type="string" defaultValue="wx-mxwx-imagecontainer-extra">
+            <caption>Image container class</caption>
+            <category>Appearance</category>
+            <description>The class on the button.</description>
+        </property>
+        <property key="imageWidth" type="integer" defaultValue="150">
+            <caption>Width</caption>
+            <category>Appearance</category>
+            <description>The width of the image.</description>
+        </property>
+        <property key="imageHeight" type="integer" defaultValue="150">
+            <caption>Height</caption>
+            <category>Appearance</category>
+            <description>The height of the image.</description>
+        </property>
+        <property key="imageLocation" type="enumeration" defaultValue="Right">
+            <caption>Image location</caption>
+            <category>Appearance</category>
+            <description>The position where the image is set.</description>
+            <enumerationValues>
+                <enumerationValue key="Above">Above</enumerationValue>
+                <enumerationValue key="Below">Below</enumerationValue>
+                <enumerationValue key="Left">Left</enumerationValue>
+                <enumerationValue key="Right">Right</enumerationValue>
+            </enumerationValues>
+        </property>
+	</properties>
+</widget>
+

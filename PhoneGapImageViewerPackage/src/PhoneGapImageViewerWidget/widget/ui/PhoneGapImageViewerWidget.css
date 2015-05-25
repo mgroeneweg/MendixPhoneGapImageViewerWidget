@@ -1,0 +1,20 @@
+/*Default CSS for pan containers*/
+.pancontainer {
+    position: relative; /*keep this intact*/
+    overflow: hidden; /*keep this intact*/
+    width: 300px;
+    height: 300px;
+    border: 1px solid black;
+}
+
+.pancontainer .zoomcontrols{ /* default CSS class for magnify controls within container */
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background: #eee;
+    border: 1px solid gray;
+}
+
+.wx-PhoneGapImageViewerWidget-table {
+    width: 100%;    
+}

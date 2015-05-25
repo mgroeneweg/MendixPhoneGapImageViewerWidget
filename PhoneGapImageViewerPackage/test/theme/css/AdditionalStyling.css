@@ -1,0 +1,13 @@
+
+.profile-phone .mx-layoutcontainer-wrapper,
+.profile-tablet .mx-layoutcontainer-wrapper {
+    padding-top: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-bottom: 5px;
+}
+
+.profile-phone .mx-dataview,
+.profile-tablet .mx-dataview {
+    background-color: white;
+}   
