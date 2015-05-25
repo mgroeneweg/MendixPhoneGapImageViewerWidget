@@ -96,9 +96,9 @@ require({
                 tdRight = null;
             
             // Only show button if camera can be used.
-//            if (!navigator.camera) {
-//                return;
-//            }
+            if (!navigator.camera) {
+                return;
+            }
 
             button = this._setupButton();
             preview = this._setupPreview();
@@ -248,11 +248,6 @@ require({
                 'height': height
             });
             this._imgNode = dom.create('img');
-            this._imgNode.src = 'https://dl.dropboxusercontent.com/u/98807681/Game%202013-12-08.JPG';
-            domStyle.set(this._imgNode, {
-                'width': '3264px',
-                'height': '2448px'
-            });
             this._previewNode.appendChild(this._imgNode);
             this.attachToDiv();
             return this._previewNode;
